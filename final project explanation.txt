@@ -1,0 +1,19 @@
+On this project, we want to submit our design patterns knowledge via small farm example. Since the project requirements announced by the lecturer. We used following patters to implement the project: Singleton Pattern, Factory Pattern, Adaptor Pattern, Observer Pattern and Visitor Pattern.
+Singleton Pattern is a creational pattern; intent of this pattern is allowing the accesors to create only one instance. Since our project requires one database, we selected singleton pattern to protect informations.
+Factory Pattern is another creational pattern, we used this pattern to create different cattles with different food types.
+Adaptor Pattern is simply manages the signals from Bluetooth to Zigbee.
+Observer Pattern is for observing the cattles, if one of them tries to escape, farmers will notified.
+And we also used visitor pattern to make sure farm visitable by Ministry of Agriculture and Food, and physicians.
+
+Explanations of classes
+Class Location is for keeping cattles location in single addres, simplifies the database class.
+Database class is for holding information, have set and get methods to provide access rather than iterator. Have private constructor to control object creation. Also have a static method for instances.
+Observer class is an interface of ElectronicDevice class.
+ElectronicDevice class is a concrete observor for cattles.
+AbsCattle class is an interface to BeefCattle and MilkCattle classes.
+BeefCattle and MilkCattle are concrete creators, also concrete subjects for Observors. Contains creation methods for getting the right type of food, and Contains Attach, Detach, Notify methods for Observors.
+CarbonHydrate is a base class of Corn and Wheat
+Protein is a base class of SoyBeans and Canola, those are conrete products.
+Visitor class is a base class for PhysicanVisitor and MinistryVisitor, which they are visitors, they have visit methods in order to visit object structure. In this case object structure is AbsCattle class and it’s concrete classes.
+Adaptor Class is a mechanism for converting signals. From Bluetooth Signals to Zigbee Signals.
+All classes used in Client Class which is main.
